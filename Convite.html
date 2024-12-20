@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      font-family: 'Arial', sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #FFE5F9, #E5F3FF, #F0FFE5);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border: 8px solid #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .background-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    
+    .rainbow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.2;
+    }
+    
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: fall linear infinite;
+    }
+    
+    .star {
+      position: absolute;
+      animation: twinkle 2s ease-in-out infinite;
+    }
+    
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); }
+      100% { transform: translateY(600px) rotate(360deg); }
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    .content-wrapper {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .title {
+      color: #FF6B6B;
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 0 #fff;
+      font-weight: bold;
+    }
+    
+    .main-text {
+      font-size: 20px;
+      color: #333;
+      margin: 15px 0;
+    }
+    
+    .details {
+      background: linear-gradient(135deg, #FFE5F9, #E5F3FF);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      border: 3px dashed #fff;
+    }
+    
+    .photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      border: 8px solid white;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .name {
+      background: linear-gradient(45deg, #FF6B6B, #4A90E2, #66BB6A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 36px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg class="background-elements" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Arco-íris -->
+      <path d="M0 80 C 25 60, 75 60, 100 80" stroke="#FF9AA2" stroke-width="4" fill="none" opacity="0.3"/>
+      <path d="M0 85 C 25 65, 75 65, 100 85" stroke="#FFB7B2" stroke-width="4" fill="none" opacity="0.3"/>
+      <path d="M0 90 C 25 70, 75 70, 100 90" stroke="#FFDAC1" stroke-width="4" fill="none" opacity="0.3"/>
+      
+      <!-- Estrelas -->
+      <path d="M20 20 L22 25 L27 25 L23 28 L24 33 L20 30 L16 33 L17 28 L13 25 L18 25 Z" fill="#FFD700" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M80 30 L82 35 L87 35 L83 38 L84 43 L80 40 L76 43 L77 38 L73 35 L78 35 Z" fill="#FFD700" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Confetes e Serpentinas -->
+      <circle cx="25" cy="10" r="1" fill="#FF6B6B">
+        <animate attributeName="cy" values="10;90" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="75" cy="5" r="1" fill="#4A90E2">
+        <animate attributeName="cy" values="5;85" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M40 0 Q 50 20, 60 0" stroke="#66BB6A" stroke-width="0.5" fill="none">
+        <animate attributeName="d" values="M40 0 Q 50 20, 60 0;M40 20 Q 50 40, 60 20" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+    
+    <div class="content-wrapper">
+      <div style="font-size: 40px; margin: 10px;">🎈 🎂 🎈</div>
+      <h1 class="title">Vem Festejar Comigo!</h1>
+      
+      <!-- Atualização da URL da imagem -->
+      <img src="C:\Users\Jorge\Downloads\WhatsApp Image 2024-11-29 at 12.23.23 copy.png" alt="Artur Miguel sorrindo" class="photo"/>
+      
+      <p class="main-text">
+        É com enorme alegria que vos convidamos para celebrar o
+        <strong>1º Aniversário</strong> do nosso pequenino
+      </p>
+      
+      <h2 class="name">
+        Artur Miguel
+      </h2>
+
+      <div class="details">
+        <p style="font-size: 24px; font-weight: bold;">
+          📅 Domingo, 22 de Dezembro de <strong>2024</strong><br>
+          🕐 21:00 horas<br>
+        </p>
+      </div>
+
+      <p style="font-size: 18px; color: #666; margin-top: 20px;">
+        Vem fazer parte deste momento tão especial!<br>
+        A tua presença será o nosso melhor presente! 🎁
+      </p>
+    </div>
+  </div>
+</body>
+</html>

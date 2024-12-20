@@ -6,7 +6,7 @@
   <title>Convite de Aniversário</title>
   <style>
     body {
-      background-color: #f9f9f9; /* Fundo neutro suave */
+      background-color: #f9f9f9;
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
@@ -22,14 +22,14 @@
       margin: 20px auto;
       text-align: center;
       padding: 40px;
-      background: linear-gradient(135deg, #FFB6C1, #FFC0CB, #B2EBF2);
+      background: linear-gradient(135deg, #FF7F50, #FFD700, #32CD32);
       border-radius: 20px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
       border: 8px solid #fff;
       position: relative;
       overflow: hidden;
     }
-    
+
     .background-elements {
       position: absolute;
       top: 0;
@@ -39,20 +39,52 @@
       z-index: 0;
     }
 
-    .confetti {
+    .star {
       position: absolute;
-      width: 10px;
-      height: 10px;
-      animation: fall linear infinite;
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out;
     }
-    
-    @keyframes fall {
-      0% { transform: translateY(-10px) rotate(0deg); }
-      100% { transform: translateY(600px) rotate(360deg); }
+
+    .rocket {
+      position: absolute;
+      width: 20px;
+      height: 50px;
+      background-color: #FF6347;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      animation: rocket 4s infinite;
+    }
+
+    .moon {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #f0f8ff;
+      border-radius: 50%;
+      animation: float 5s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes rocket {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-100px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
     }
 
     .content-wrapper {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9); /* Retângulo superior mais transparente */
       padding: 25px;
       border-radius: 15px;
       position: relative;
@@ -60,7 +92,7 @@
     }
 
     .title {
-      color: #FF4081;
+      color: #FF6347;
       font-size: 36px;
       margin-bottom: 20px;
       text-shadow: 2px 2px 0 #fff;
@@ -76,7 +108,7 @@
     }
 
     .details {
-      background: linear-gradient(135deg, #E1F5FE, #FFEBEE);
+      background: linear-gradient(135deg, #FF1493, #FFD700);
       padding: 20px;
       border-radius: 15px;
       margin: 20px 0;
@@ -97,7 +129,7 @@
     }
 
     .name {
-      background: linear-gradient(45deg, #FF80AB, #FF4081, #64B5F6);
+      background: linear-gradient(45deg, #FF1493, #FF6347, #32CD32);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-size: 40px;
@@ -105,33 +137,40 @@
       margin: 20px 0;
     }
 
-    /* Adicionando mais confetes e animações divertidas */
     .confetti-1 {
-      background-color: #FF4081;
+      background-color: #FF6347;
       animation: fall 2s infinite;
     }
     .confetti-2 {
-      background-color: #4CAF50;
+      background-color: #FFFF00;
       animation: fall 2.5s infinite;
     }
     .confetti-3 {
-      background-color: #FFEB3B;
+      background-color: #32CD32;
       animation: fall 3s infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); }
+      100% { transform: translateY(600px) rotate(360deg); }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <svg class="background-elements" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <!-- Arco-íris -->
-      <path d="M0 80 C 25 60, 75 60, 100 80" stroke="#FF80AB" stroke-width="4" fill="none" opacity="0.3"/>
-      <path d="M0 85 C 25 65, 75 65, 100 85" stroke="#FF4081" stroke-width="4" fill="none" opacity="0.3"/>
-      <path d="M0 90 C 25 70, 75 70, 100 90" stroke="#FFEB3B" stroke-width="4" fill="none" opacity="0.3"/>
+      <!-- Estrelas animadas -->
+      <circle cx="25" cy="10" r="3" class="star"/>
+      <circle cx="50" cy="30" r="3" class="star"/>
+      <circle cx="75" cy="50" r="3" class="star"/>
       
-      <!-- Confetes -->
-      <circle cx="25" cy="10" r="3" class="confetti confetti-1"/>
-      <circle cx="50" cy="30" r="3" class="confetti confetti-2"/>
-      <circle cx="75" cy="50" r="3" class="confetti confetti-3"/>
+      <!-- Foguetes animados -->
+      <div class="rocket" style="top: 10%; left: 20%;"></div>
+      <div class="rocket" style="top: 20%; left: 40%;"></div>
+      
+      <!-- Lua animada -->
+      <div class="moon" style="top: 10%; left: 60%;"></div>
+      <div class="moon" style="top: 30%; left: 80%;"></div>
     </svg>
     
     <div class="content-wrapper">

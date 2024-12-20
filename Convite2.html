@@ -6,7 +6,7 @@
   <title>Convite de Aniversário</title>
   <style>
     body {
-      background-color: #0e1b44; /* Cor de fundo do céu estrelado */
+      background-color: #1a1c6c; /* Cor de fundo do céu estrelado escuro */
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@
 
     .container {
       font-family: 'Arial', sans-serif;
-      max-width: 600px;
+      max-width: 100%;
       margin: 20px auto;
       text-align: center;
       padding: 40px;
@@ -29,6 +29,7 @@
       border: 8px solid #fff;
       position: relative;
       overflow: hidden;
+      width: 90%;
     }
 
     .background-elements {
@@ -42,8 +43,8 @@
 
     .star {
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 5px;
+      height: 5px;
       background-color: #fff;
       border-radius: 50%;
       animation: twinkle 3s infinite ease-in-out;
@@ -51,8 +52,8 @@
 
     .rocket {
       position: absolute;
-      width: 20px;
-      height: 50px;
+      width: 30px;
+      height: 60px;
       background-color: #FF6347;
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       animation: rocket 4s infinite;
@@ -60,10 +61,11 @@
 
     .moon {
       position: absolute;
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       background-color: #f0f8ff;
       border-radius: 50%;
+      box-shadow: inset -6px -6px 10px rgba(0,0,0,0.5);
       animation: float 5s infinite ease-in-out;
     }
 
@@ -74,18 +76,18 @@
 
     @keyframes rocket {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-100px); }
+      50% { transform: translateY(-150px); }
       100% { transform: translateY(0); }
     }
 
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
+      50% { transform: translateY(-40px); }
       100% { transform: translateY(0); }
     }
 
     .content-wrapper {
-      background: rgba(255, 255, 255, 0.6); /* Retângulo superior com opacidade reduzida */
+      background: rgba(255, 255, 255, 0.4); /* Retângulo superior mais transparente */
       padding: 25px;
       border-radius: 15px;
       position: relative;
@@ -94,7 +96,7 @@
 
     .title {
       color: #FF6347;
-      font-size: 36px;
+      font-size: 28px;
       margin-bottom: 20px;
       text-shadow: 2px 2px 0 #fff;
       font-weight: bold;
@@ -102,7 +104,7 @@
     }
 
     .main-text {
-      font-size: 22px;
+      font-size: 18px;
       color: #333;
       margin: 15px 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -118,8 +120,8 @@
     }
 
     .photo {
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
       margin: 20px auto;
@@ -133,7 +135,7 @@
       background: linear-gradient(45deg, #FF1493, #FF6347, #32CD32);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 40px;
+      font-size: 30px;
       font-weight: bold;
       margin: 20px 0;
     }
@@ -156,7 +158,6 @@
       100% { transform: translateY(600px) rotate(360deg); }
     }
 
-    /* Estilo para as estrelas, foguetes e luas no fundo */
     .star {
       animation: starTwinkle 3s infinite ease-in-out;
     }
@@ -174,6 +175,65 @@
       0% { transform: translateY(0) rotate(0deg); }
       50% { transform: translateY(-150px) rotate(180deg); }
       100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    .rocket:before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #FFD700;
+      border-radius: 50%;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .moon:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #f8f8ff;
+      border-radius: 50%;
+      top: 10%;
+      left: 10%;
+      box-shadow: inset -5px -5px 8px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 24px;
+      }
+
+      .main-text {
+        font-size: 16px;
+      }
+
+      .details {
+        padding: 15px;
+        margin: 15px 0;
+      }
+
+      .photo {
+        width: 180px;
+        height: 180px;
+      }
+
+      .name {
+        font-size: 26px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .confetti-1,
+      .confetti-2,
+      .confetti-3 {
+        width: 10px;
+        height: 10px;
+      }
     }
   </style>
 </head>
@@ -202,28 +262,20 @@
       <h1 class="title">Vem Festejar Comigo!</h1>
       
       <!-- Atualização da URL da imagem -->
-      <img src="WhatsApp%20Image%202024-11-29%20at%2012.23.23%20copy.png" alt="Artur Miguel sorrindo" class="photo"/>
+      <img src="WhatsApp Image 2024-11-29 at 12.23.23 copy.png" alt="Foto de Aniversário" class="photo">
+      <div class="name">Aniversário do João</div>
       
-      <p class="main-text">
-        É com enorme alegria que vos convidamos para celebrar o
-        <strong>1º Aniversário</strong> do nosso pequenino
-      </p>
+      <div class="main-text">Estou muito feliz em convidar você para o meu aniversário de 5 anos! 🎉 Vamos ter muita diversão com jogos e doces!</div>
       
-      <h2 class="name">
-        Artur Miguel
-      </h2>
-
       <div class="details">
-        <p style="font-size: 24px; font-weight: bold;">
-          📅 Domingo, 22 de Dezembro de <strong>2024</strong><br>
-          🕐 21:00 horas<br>
-        </p>
+        <p style="font-size: 20px; font-weight: bold;">Dia: <span style="color: #FF6347;">23 de Janeiro 2025</span></p>
+        <p style="font-size: 20px; font-weight: bold;">Local: <span style="color: #FF6347;">Largo da Igreja, nº 25</span></p>
+        <p style="font-size: 20px; font-weight: bold;">Hora: <span style="color: #FF6347;">15h00</span></p>
       </div>
 
-      <p style="font-size: 18px; color: #666; margin-top: 20px;">
-        Vem fazer parte deste momento tão especial!<br>
-        A tua presença será o nosso melhor presente! 🎁
-      </p>
+      <div class="confetti-1"></div>
+      <div class="confetti-2"></div>
+      <div class="confetti-3"></div>
     </div>
   </div>
 </body>

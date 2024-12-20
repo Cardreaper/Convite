@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Aniversário</title>
+  <style>
+    body {
+      background-color: #f9f9f9; /* Fundo neutro suave */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      font-family: 'Arial', sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #FFB6C1, #FFC0CB, #B2EBF2);
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border: 8px solid #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .background-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      animation: fall linear infinite;
+    }
+    
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); }
+      100% { transform: translateY(600px) rotate(360deg); }
+    }
+
+    .content-wrapper {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 25px;
+      border-radius: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      color: #FF4081;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 0 #fff;
+      font-weight: bold;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .main-text {
+      font-size: 22px;
+      color: #333;
+      margin: 15px 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .details {
+      background: linear-gradient(135deg, #E1F5FE, #FFEBEE);
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px 0;
+      border: 3px dashed #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      border: 8px solid white;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .name {
+      background: linear-gradient(45deg, #FF80AB, #FF4081, #64B5F6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 40px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    /* Adicionando mais confetes e animações divertidas */
+    .confetti-1 {
+      background-color: #FF4081;
+      animation: fall 2s infinite;
+    }
+    .confetti-2 {
+      background-color: #4CAF50;
+      animation: fall 2.5s infinite;
+    }
+    .confetti-3 {
+      background-color: #FFEB3B;
+      animation: fall 3s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg class="background-elements" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Arco-íris -->
+      <path d="M0 80 C 25 60, 75 60, 100 80" stroke="#FF80AB" stroke-width="4" fill="none" opacity="0.3"/>
+      <path d="M0 85 C 25 65, 75 65, 100 85" stroke="#FF4081" stroke-width="4" fill="none" opacity="0.3"/>
+      <path d="M0 90 C 25 70, 75 70, 100 90" stroke="#FFEB3B" stroke-width="4" fill="none" opacity="0.3"/>
+      
+      <!-- Confetes -->
+      <circle cx="25" cy="10" r="3" class="confetti confetti-1"/>
+      <circle cx="50" cy="30" r="3" class="confetti confetti-2"/>
+      <circle cx="75" cy="50" r="3" class="confetti confetti-3"/>
+    </svg>
+    
+    <div class="content-wrapper">
+      <div style="font-size: 40px; margin: 10px;">🎈 🎂 🎉</div>
+      <h1 class="title">Vem Festejar Comigo!</h1>
+      
+      <!-- Atualização da URL da imagem -->
+      <img src="WhatsApp%20Image%202024-11-29%20at%2012.23.23%20copy.png" alt="Artur Miguel sorrindo" class="photo"/>
+      
+      <p class="main-text">
+        É com enorme alegria que vos convidamos para celebrar o
+        <strong>1º Aniversário</strong> do nosso pequenino
+      </p>
+      
+      <h2 class="name">
+        Artur Miguel
+      </h2>
+
+      <div class="details">
+        <p style="font-size: 24px; font-weight: bold;">
+          📅 Domingo, 22 de Dezembro de <strong>2024</strong><br>
+          🕐 21:00 horas<br>
+        </p>
+      </div>
+
+      <p style="font-size: 18px; color: #666; margin-top: 20px;">
+        Vem fazer parte deste momento tão especial!<br>
+        A tua presença será o nosso melhor presente! 🎁
+      </p>
+    </div>
+  </div>
+</body>
+</html>
